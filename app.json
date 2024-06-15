@@ -21,11 +21,8 @@
      }, 
      { 
        "url": "https://github.com/python3/Python"
-     }, 
+     }
      ],
-  "scripts": {
-    "postdeploy": "python3 setup.py"
-  },
   "formation": {
     "web": {
       "quantity": 1,
@@ -42,4 +39,4 @@
       }
     }
   }
-}
+
