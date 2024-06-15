@@ -13,7 +13,7 @@
     }
   },
   "addons": [
-    "heroku/python"  
+    "python3"  
   ],
   "buildpacks": [
      {
