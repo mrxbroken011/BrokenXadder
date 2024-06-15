@@ -4,6 +4,10 @@ from functools import wraps
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
+from telegram.ext import MessageHandler, Filters
+from telegram.utils.request import Request
+
+
 # Load environment variables from Heroku config vars
 TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 OWNER_ID = int(os.getenv('OWNER_ID'))  # Make sure OWNER_ID is set in the environment variables
