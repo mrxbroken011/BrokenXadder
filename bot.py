@@ -1,19 +1,32 @@
 import logging
 import os
+from functools import wraps
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 # Load environment variables from Heroku config vars
 TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+OWNER_ID = int(os.getenv('OWNER_ID'))  # Make sure OWNER_ID is set in the environment variables
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+def owner_only(func):
+    @wraps(func)
+    def wrapped(update: Update, context: CallbackContext, *args, **kwargs):
+        if update.message.from_user.id != OWNER_ID:
+            update.message.reply_text('You are not authorized to use this bot.')
+            return
+        return func(update, context, *args, **kwargs)
+    return wrapped
+
+@owner_only
 def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Hello! I am your bot. Use /add <user_id> to add a member to the group.')
 
+@owner_only
 def add_member(update: Update, context: CallbackContext) -> None:
     if update.message.chat.type != 'private':
         update.message.reply_text('This command can only be used in private chat.')
