@@ -1,7 +1,7 @@
-<p align="center"><a BrokenXadder width="520" height="138.45"/></a></p>
+<p align="center"><h BrokenXadder <width="520" height="138.45"/></h></p>
 
 
-<h1> <img src="https://github.com/mrxbroken011/brokenxnetwork/blob/master/resources/analytics.webp" width="57px"> ɢɪᴛʜᴜʙ ᴀɴᴀʟʏᴛɪᴄs </h1>
+
 
 
 - DEPLOY TO HEROKU -
