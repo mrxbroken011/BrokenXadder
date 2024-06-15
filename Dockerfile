@@ -1,12 +1,18 @@
-FROM nikolaik/python-nodejs:python3.10-nodejs19
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# Set working directory inside the container
+WORKDIR /app
 
-COPY . /app/
-WORKDIR /app/
-RUN pip3 install --no-cache-dir -U -r requirements.txt
+# Copy requirements.txt to the working directory
+COPY requirements.txt .
 
-CMD python bot.py
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code to the working directory
+COPY . .
+
+# Run your application
+CMD ["python", "app.py"]
+
