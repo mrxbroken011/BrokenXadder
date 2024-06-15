@@ -1,7 +1,7 @@
 {
   "name": "BrokenXadder",
-  "description": "Example Telegram bot deployed on Heroku",
-  "repository": "https://github.com/mrxbroken011/Brokenxadder",  
+  "description": "simpe members adder bot",
+  "repository": "https://github.com/mrxbroken011/Brokenxadder",
   "env": {
     "BOT_TOKEN": {
       "description": "Telegram Bot Token",
@@ -11,18 +11,18 @@
       "description": "Telegram User ID of the bot owner",
       "required": true
     }
-  }    
+  },
   "buildpacks": [
-     {
-       "url": "https://github.com/heroku/heroku-buildpack-python"
-     },
-     {
-       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-     }, 
-     { 
-       "url": "https://github.com/python3/Python"
-     }
-     ],
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    }
+  ],
   "formation": {
     "web": {
       "quantity": 1,
@@ -32,11 +32,13 @@
   "environments": {
     "production": {
       "BOT_TOKEN": {
+        "description": "Telegram Bot Token for production environment",
         "required": true
       },
       "OWNER_ID": {
+        "description": "Telegram User ID of the bot owner for production environment",
         "required": true
       }
     }
   }
-
+}
