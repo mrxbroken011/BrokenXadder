@@ -1,0 +1,37 @@
+{
+    "name": "BrokenXadder",
+    "description": "simple members adder bot",
+    "logo": "https://telegra.ph/file/dbb3222d0fd3712e2a0e4.jpg",
+    "keywords": [
+    "adder",
+    "telegram",
+    "bot",
+    "members",
+    "telegrammembers",
+    "telegram-bot"
+    ],
+    "env": {
+      "BOT_TOKEN": {
+        "description": "BOT TOKEN GET IT FROM @BOTFATHER",
+        "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "SET OWNER ID ",
+        "value": "",
+        "required": true
+      }
+          },
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "stack": "container"
+  }
