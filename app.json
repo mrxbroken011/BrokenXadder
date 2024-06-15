@@ -11,20 +11,20 @@
       "description": "Telegram User ID of the bot owner",
       "required": true
     }
-  },
-  "addons": [
-    "python3"  
-  ],
+  }    
   "buildpacks": [
      {
        "url": "https://github.com/heroku/heroku-buildpack-python"
      },
      {
        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-     }
+     }, 
+     { 
+       "url": "https://github.com/python3/Python"
+     }, 
      ],
   "scripts": {
-    "postdeploy": "python setup.py"
+    "postdeploy": "python3 setup.py"
   },
   "formation": {
     "web": {
