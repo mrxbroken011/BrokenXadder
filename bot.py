@@ -9,7 +9,7 @@ from telegram.utils.request import Request
 
 
 # Load environment variables from Heroku config vars
-TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 OWNER_ID = int(os.getenv('OWNER_ID'))  # Make sure OWNER_ID is set in the environment variables
 
 # Enable logging
@@ -28,7 +28,7 @@ def owner_only(func):
 
 @owner_only
 def start(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text('Hello! I am your bot. Use /add <user_id> to add a member to the group.')
+    update.message.reply_text('Hello! I am Mr Broken's bot. Use /add <user_id> to add a member to the group.')
 
 @owner_only
 def add_member(update: Update, context: CallbackContext) -> None:
