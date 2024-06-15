@@ -1,4 +1,4 @@
-<p align="center"><p height="90" width="100"> **BROKENXADDER**
+<p align="center"><h height="90" width="100"> <h1>BROKENXADDER</h1>
 
 
 
