@@ -1,37 +1,32 @@
 {
-    "name": "BrokenXadder",
-    "description": "simple members adder bot",
-    "logo": "https://telegra.ph/file/dbb3222d0fd3712e2a0e4.jpg",
-    "keywords": [
-    "adder",
+  "name": "BrokenXadder",
+  "description": "Simple members adder bot for Telegram",
+  "logo": "",
+  "repository": "https://github.com/yourusername/BrokenXadder",
+  "keywords": [
     "telegram",
     "bot",
     "members",
-    "telegrammembers",
     "telegram-bot"
-    ],
-    "env": {
-      "BOT_TOKEN": {
-        "description": "BOT TOKEN GET IT FROM @BOTFATHER",
-        "value": "",
-        "required": true
-      },
-      "OWNER_ID": {
-        "description": "SET OWNER ID ",
-        "value": "",
-        "required": true
-      }
-          },
-    "buildpacks": [
-          {
-              "url": "heroku/python"
-          },
-          {
-              "url": "https://github.com/heroku/heroku-buildpack-python"
-          },
-          {
-              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-          }
-      ],
-      "stack": "container"
+  ],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Bot Token from @BotFather",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Telegram user ID of the bot owner",
+      "required": true
+    }
+  },
+  "addons": [],
+  "scripts": {
+    "start": "python bot.py"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
